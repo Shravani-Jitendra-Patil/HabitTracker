@@ -1,0 +1,40 @@
+.hero {
+  background: linear-gradient(135deg, #1d4ed8, #0f766e);
+  color: #fff;
+  padding: 40px 0;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+.hero p {
+  margin: 0;
+  opacity: 0.95;
+}
+.main-layout {
+  padding-bottom: 30px;
+}
+.layout-grid {
+  grid-template-columns: 1fr 1.2fr;
+  align-items: start;
+}
+.message {
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.success-message {
+  background: #dcfce7;
+  color: #166534;
+}
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+}
+@media (max-width: 900px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+}

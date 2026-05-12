@@ -1,0 +1,27 @@
+<div class="card">
+  <h2>Habit List</h2>
+  <div *ngIf="habits.length === 0" class="empty-state">No habits added yet.</div>
+
+  <div class="habit-card" *ngFor="let habit of habits">
+    <div class="habit-top">
+      <div>
+        <h3>{{ habit.habitName }}</h3>
+        <p><strong>Category:</strong> {{ habit.category }}</p>
+        <p><strong>Frequency:</strong> {{ habit.frequency }}</p>
+        <p><strong>Description:</strong> {{ habit.description || 'No description' }}</p>
+        <p><strong>Streak:</strong> {{ habit.streak || 0 }} day(s)</p>
+      </div>
+      <div class="status-badge" [class.done]="habit.completedToday">
+        {{ habit.completedToday ? 'Done Today' : 'Pending Today' }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-success" (click)="toggleStatus.emit({ id: habit.id!, completed: !habit.completedToday })">
+        {{ habit.completedToday ? 'Mark Pending' : 'Mark Done' }}
+      </button>
+      <button class="btn btn-warning" (click)="editHabit.emit(habit)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteHabit.emit(habit.id!)">Delete</button>
+    </div>
+  </div>
+</div>

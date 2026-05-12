@@ -1,0 +1,15 @@
+.dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 20px;
+}
+.stat-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+.stat-card p {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 700;
+}
+.success { border-left: 6px solid #16a34a; }
+.warning { border-left: 6px solid #f59e0b; }

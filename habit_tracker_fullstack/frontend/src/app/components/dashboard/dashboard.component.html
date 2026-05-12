@@ -1,0 +1,14 @@
+<div class="dashboard grid dashboard-grid">
+  <div class="card stat-card">
+    <h3>Total Habits</h3>
+    <p>{{ dashboard?.totalHabits || 0 }}</p>
+  </div>
+  <div class="card stat-card success">
+    <h3>Completed Today</h3>
+    <p>{{ dashboard?.completedToday || 0 }}</p>
+  </div>
+  <div class="card stat-card warning">
+    <h3>Pending Today</h3>
+    <p>{{ dashboard?.pendingToday || 0 }}</p>
+  </div>
+</div>

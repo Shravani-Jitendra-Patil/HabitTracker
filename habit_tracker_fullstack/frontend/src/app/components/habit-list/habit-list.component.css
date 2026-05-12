@@ -1,0 +1,35 @@
+.habit-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: #fafcff;
+}
+.habit-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.habit-top h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.status-badge {
+  height: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fef3c7;
+  font-weight: 700;
+}
+.status-badge.done {
+  background: #dcfce7;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.empty-state {
+  color: #6b7280;
+}

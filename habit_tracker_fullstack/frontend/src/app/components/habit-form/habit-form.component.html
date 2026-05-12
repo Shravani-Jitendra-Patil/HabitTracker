@@ -1,0 +1,38 @@
+<div class="card">
+  <h2>{{ selectedHabit ? 'Edit Habit' : 'Add New Habit' }}</h2>
+  <form [formGroup]="habitForm" (ngSubmit)="submitForm()" class="grid form-grid">
+    <div>
+      <label for="habitName">Habit Name</label>
+      <input id="habitName" type="text" formControlName="habitName" placeholder="Enter habit name">
+      <div class="error" *ngIf="habitForm.get('habitName')?.touched && habitForm.get('habitName')?.invalid">
+        Habit name is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="category">Category</label>
+      <input id="category" type="text" formControlName="category" placeholder="Health / Study / Fitness">
+      <div class="error" *ngIf="habitForm.get('category')?.touched && habitForm.get('category')?.invalid">
+        Category is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="frequency">Frequency</label>
+      <select id="frequency" formControlName="frequency">
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+      </select>
+    </div>
+
+    <div class="full-width">
+      <label for="description">Description</label>
+      <textarea id="description" rows="3" formControlName="description" placeholder="Write a short description"></textarea>
+    </div>
+
+    <div class="actions full-width">
+      <button type="submit" class="btn btn-primary">{{ selectedHabit ? 'Update Habit' : 'Save Habit' }}</button>
+      <button *ngIf="selectedHabit" type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<header class="hero">
+  <div class="container">
+    <h1>Advanced Habit Tracker</h1>
+    <p>Spring Boot + MySQL backend and Angular frontend</p>
+  </div>
+</header>
+
+<main class="container main-layout">
+  <div *ngIf="successMessage" class="message success-message">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="message error-message">{{ errorMessage }}</div>
+
+  <app-dashboard [dashboard]="dashboard"></app-dashboard>
+
+  <div class="grid layout-grid">
+    <app-habit-form
+      [selectedHabit]="selectedHabit"
+      (saveHabit)="handleSaveHabit($event)"
+      (cancelEdit)="handleCancelEdit()">
+    </app-habit-form>
+
+    <app-habit-list
+      [habits]="habits"
+      (editHabit)="handleEditHabit($event)"
+      (deleteHabit)="handleDeleteHabit($event)"
+      (toggleStatus)="handleToggleStatus($event)">
+    </app-habit-list>
+  </div>
+</main>
